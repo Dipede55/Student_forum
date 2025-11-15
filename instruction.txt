@@ -18,3 +18,15 @@ Images are not displayed on website:
 WARNNING IN QUERY: 
 forget to take "question.img" column -> cannot find the images and undefined path or the folder store images
 - $sql = 'SELECT question.id, question.text, question.date, user.name, question.img FROM question
+
+Git:
+Usually command used: 
+step by step: 
+- cd to the paricular folder: if not may be the whole folder COMP1841 with n files will be pushed all. 
+- git init, git add .: add all files to that empty repo 
+- git remote add origin -link repo-: if there is no repo and the repo link must have .git
+- git remote set-url origin -link repo-: if want to change repo
+- git remote -v: check the present repo 
+- git commit
+- git push -u origin main: push to main branch 
+DONE!!!
