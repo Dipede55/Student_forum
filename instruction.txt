@@ -1,0 +1,20 @@
+table: 
+author - user
+category - module 
+
+Attribute
+Jokes - Questions
+Joke - Question
+joketext - text 
+CategoryName - ModuleName
+
+Issues:
+Images are not displayed on website:
+- wrong path
+- permission for both folder and image: cd to the folder's path 
+- wrong variable:
+- forget to select the image column in database
+- write wrong name of image column in database: its "img" not "image"
+WARNNING IN QUERY: 
+forget to take "question.img" column -> cannot find the images and undefined path or the folder store images
+- $sql = 'SELECT question.id, question.text, question.date, user.name, question.img FROM question
