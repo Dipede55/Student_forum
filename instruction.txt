@@ -15,6 +15,11 @@ Images are not displayed on website:
 - wrong variable:
 - forget to select the image column in database
 - write wrong name of image column in database: its "img" not "image"
+- right: <input type="file" name="image" accept="image/*"> (addquestion.html.php)
+     wrong because the accept you write is "images/*" but it is right without "s"
+     the name in input field is "image" but in php file, it reading file "img" - it cannot found the image uploaded
+  wrong: if (isset($_FILES['img']) && $_FILES['img']['error'] == 0) (addquestion.php)
+
 WARNNING IN QUERY: 
 forget to take "question.img" column -> cannot find the images and undefined path or the folder store images
 - $sql = 'SELECT question.id, question.text, question.date, user.name, question.img FROM question
