@@ -12,7 +12,7 @@
      <select name="module">
           <option value="">select a module</option>
           <?php foreach($modules as $module): ?>
-               <option value="<?=htmlspecialchars($user['id'], ENT_QUOTES, 'UTF-8');?>">
+               <option value="<?=htmlspecialchars($module['id'], ENT_QUOTES, 'UTF-8');?>">
                <?=htmlspecialchars($module['moduleName'], ENT_QUOTES, 'UTF-8');?></option>
           <?php endforeach;?>
           </select>

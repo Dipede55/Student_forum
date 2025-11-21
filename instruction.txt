@@ -30,3 +30,8 @@ step by step:
 - git commit
 - git push -u origin main: push to main branch 
 DONE!!!
+
+to update any change to github:
+- git add file.name 
+- git commit -m "something"
+- git push (already in main branch)
