@@ -14,7 +14,7 @@ try{
           $stmt = $pdo->prepare($sql);
           $stmt->bindValue(':id', $_GET['id']);
           $stmt->execute();
-          $joke = $stmt->fetch();
+          $question = $stmt->fetch();
           $title = 'Edit Question';
           ob_start();
           include 'templates/editquestion.html.php';

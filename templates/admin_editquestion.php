@@ -1,9 +1,8 @@
-<form action="" method="post">
+<form id="admin" action="" method="post">
      <input type="hidden" name="questionid" value="<?=$question['id']?>">
      <label for="text">Edit your question here:</label>
-     
      <textarea name="text" rows="3" cols="40">
-     <?= htmlspecialchars($question['text']) ?></textarea>
-     <!-- no more additional space in the text box -->
+     <?=$question['text']?>
+     </textarea>
      <input type="submit" name="submit" value="Save">
 </form>

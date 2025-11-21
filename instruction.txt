@@ -20,6 +20,8 @@ Images are not displayed on website:
      the name in input field is "image" but in php file, it reading file "img" - it cannot found the image uploaded
   wrong: if (isset($_FILES['img']) && $_FILES['img']['error'] == 0) (addquestion.php)
 
+DatabaseFunctions:
+- To display the total jokes: 1. add path of DatabaseFunctions to the questions.php file, 2. set variable call "totalquestion" a function which is totalquestion function.
 WARNNING IN QUERY: 
 forget to take "question.img" column -> cannot find the images and undefined path or the folder store images
 - $sql = 'SELECT question.id, question.text, question.date, user.name, question.img FROM question
