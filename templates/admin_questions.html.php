@@ -19,6 +19,4 @@
 
      <img height="100" src="../images/<?= htmlspecialchars($question['img'], ENT_QUOTES, 'UTF-8'); ?>" alt="Question image">
 
-    <?php $display_date = date("D d M Y", strtotime($question['date'])); ?>
-    <p><?= htmlspecialchars($display_date, ENT_QUOTES, 'UTF-8'); ?></p>
 <?php endforeach; ?>

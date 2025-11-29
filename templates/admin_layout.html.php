@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
      <meta charset="UTF-8">
-     <link rel="stylesheet" href="../admin_questions.css">
+     <link rel="stylesheet" href="../admin_questionss.css">
      <title>$title</title>
 </head>
 <body>
