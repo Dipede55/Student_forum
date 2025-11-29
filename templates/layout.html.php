@@ -11,7 +11,7 @@
           <ul>
                <li><a href="index.php">Home</a></li>
                <li><a href="questions.php">Questions list</a></li>
-               <li><a href="admin/login/Login.html">Admin Login</a></li>
+               <li><a href="admin/login/Login.html">Login</a></li>
                <!-- <li><a href="addquestion.php">Add a new question</a></li> -->
           
           </ul>
