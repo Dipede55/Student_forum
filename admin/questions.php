@@ -7,7 +7,7 @@
           INNER JOIN module ON module_id = module.id
           INNER JOIN user ON user_id = user.id';
           $questions = $pdo->query($sql);
-          $title = 'Questions List';
+          $title = 'Manage Questions';
           $totalQuestions = totalQuestions($pdo);
           ob_start();
           include '../templates/admin_questions.html.php';

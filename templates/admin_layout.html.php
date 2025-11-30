@@ -3,7 +3,7 @@
 <head>
      <meta charset="UTF-8">
      <link rel="stylesheet" href="../admin_questionss.css">
-     <title>$title</title>
+     <title><?= htmlspecialchars($title) ?></title>
 </head>
 <body>
      <header id="admin">
@@ -12,14 +12,15 @@
      </header>
      <nav>
           <ul>
-               <li><a href="questions.php">Manage Questions</a></li>
-               <li><a href="modules.php">Manage Modules</a></li>
-               <li><a href="users.php">Manage Users</a></li>
-               <li><a href="login/Logout.php">Public Site/Logout</a></li>
+               <li><a href="../admin/index.php">Home</a></li>
+               <li><a href="../admin/questions.php">Manage Questions</a></li>
+               <li><a href="../admin/modules.php">Manage Modules</a></li> <!-- not coded yet -->
+               <li><a href="../admin/users.php">Manage Users</a></li> <!-- not coded yet -->
+               <li><a href="../admin/login/Logout.php">Public Site/Logout</a></li>
           </ul>
      </nav>
      <main>
-          <?=$output?>
+          <?= $output?>
      </main>
      <footer>&copy; Student Forum 2025</footer>
 </body>

@@ -1,49 +1,66 @@
+<!-- if right username and password, go to the questions page -->
 <?php 
-     $ActualPassword = "Secret";
-     if($_POST['password'] === $ActualPassword){
-          session_start();
-          $_SESSION['Authorized'] = "Y";
-          header("Location: ../questions.php");
-     } else {
-          header("Location: Wrongpassword.html");
-     }
+     // $ActualPassword = "Secret";
+     // if($_POST['password'] === $ActualPassword){
+     //      session_start();
+     //      $_SESSION['Authorized'] = "Y"; 
+     //      header("Location: index.php");
+     // } else {
+     //      header("Location: Wrongpassword.html");
+     // }
+require '../../includes/session_start.php';
+$title = 'Login';
+session_start();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    require '../../includes/DatabaseConnection.php';
+    $username = trim($_POST['username']);
+    $password = $_POST['password'];
+    $stmt = $pdo->prepare('SELECT * FROM user WHERE username = ?');
+    $stmt->execute([$username]);
+    $user = $stmt->fetch();
 
-// session_start();
-// require_once '../../includes/DatabaseConnection.php'; // your DB connection (mysqli or PDO)
+    if ($user && md5($password) === $user['password']) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['loggedin'] = true;
+        $_SESSION['name'] = $user['name'];
+        $_SESSION['is_admin'] = (bool)$user['admin_role_id']; // if not null → admin
+        header('Location: ../index.php');
+        exit;
+    } else {
+        header("Location: Wrongpassword.html");
+    }
+}
+?>
 
-// // get form values
-// $username = $_POST['username'];
-// $password = md5($_POST['password']); // convert to MD5
 
-// $sql = "SELECT id, username, password, admin_role_id FROM user 
-//         WHERE username = ? LIMIT 1";
+<?php
+// require '../../includes/session_start.php';
+// include '../../includes/DatabaseConnection.php';
 
-// $stmt = $conn->prepare($sql);
-// $stmt->bind_param("s", $username);
-// $stmt->execute();
-// $result = $stmt->get_result();
+// $title = 'Login';
+// $error = '';
 
-// $user = $result->fetch_assoc();
+// if ($_POST) {
+//     $username = trim($_POST['username']);
+//     $password = $_POST['password'];
 
-// // compare MD5 hash
-// if ($user && $user['password'] === $password) {
+//     $stmt = $pdo->prepare("SELECT * FROM user WHERE username = ?");
+//     $stmt->execute([$username]);
+//     $user = $stmt->fetch();
 
-//     // set session values
-//     $_SESSION['Authorized'] = "Y";
-//     $_SESSION['user_id'] = $user['id'];
-//     $_SESSION['username'] = $user['username'];
-//     $_SESSION['role'] = $user['admin_role_id'];
+//     if ($user && md5($password) === $user['password']) {
+//         $_SESSION['loggedin'] = true;
+//         $_SESSION['user_id'] = $user['id'];
+//         $_SESSION['name'] = $user['name'];
+//         $_SESSION['is_admin'] = (bool)$user['admin_role_id']; // if not null → admin
 
-//     // redirect
-//     if ($user['admin_role_id'] != 0) {
-//         header("Location: ../admin/login/index.php");
+//         header('Location: index.php');
+//         exit;
 //     } else {
-//         header("Location: ../../index.php");
+//         $error = 'Invalid username or password';
 //     }
-//     exit;
 // }
 
-// // login failed
-// header("Location: Wrongpassword.html");
-// exit;
+// ob_start();
 ?>
+

@@ -8,6 +8,9 @@ Joke - Question
 joketext - text 
 CategoryName - ModuleName
 
+Grok file:
+login.php is validate.php
+
 Issues:
 Images are not displayed on website:
 - wrong path
