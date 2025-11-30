@@ -1,4 +1,3 @@
-<?php //require "Check.php"; ?>
 <?php
 $title = 'Student Forum Database - Admin Area';
 ob_start(); //ob output buffering to store the variables and use later by UI file

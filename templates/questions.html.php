@@ -21,4 +21,19 @@
 
     <img height="100" src="/COMP1841/studentforum/images/<?= htmlspecialchars($question['img'], ENT_QUOTES, 'UTF-8'); ?>" alt="Question image">
 
+    <?php
+        $isOwner = ($_SESSION['loggedin'] && $_SESSION['user_id'] == $q['user_id']);
+        $isAdmin = $_SESSION['is_admin'];
+        ?>
+
+        <?php if ($isOwner): ?>
+            <a href="editquestion.php?id=<?= $q['id'] ?>">Edit</a>
+        <?php endif; ?>
+
+        <?php if ($isOwner || $isAdmin): ?>
+            <form action="deletequestion.php" method="post" style="display:inline;">
+                <input type="hidden" name="id" value="<?= $q['id'] ?>">
+                <input type="submit" value="Delete" onclick="return confirm('Delete this question?')">
+            </form>
+        <?php endif; ?>
 <?php endforeach; ?>

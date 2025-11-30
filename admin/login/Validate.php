@@ -30,6 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: Wrongpassword.html");
     }
 }
+
+ob_start();
+include '../../templates/login.html.php';
+$output = ob_get_clean();
+include '../../templates/layout.html.php';
 ?>
 
 

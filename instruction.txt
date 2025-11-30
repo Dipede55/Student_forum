@@ -9,7 +9,8 @@ joketext - text
 CategoryName - ModuleName
 
 Grok file:
-login.php is validate.php
+Login.html and Validate.php is login.php
+session_start.php is Check.php
 
 Issues:
 Images are not displayed on website:
@@ -22,7 +23,9 @@ Images are not displayed on website:
      wrong because the accept you write is "images/*" but it is right without "s"
      the name in input field is "image" but in php file, it reading file "img" - it cannot found the image uploaded
   wrong: if (isset($_FILES['img']) && $_FILES['img']['error'] == 0) (addquestion.php)
-
+- understand where is the root folder and how to write a right path of a file even it is in a deep level.
+  Define the root folder first, incase the connection between many deep level files. 
+  $basefolder = COMP1841/studentforum/ -> in use: <?= $basefolder ?> index.php
 DatabaseFunctions:
 - To display the total jokes: 1. add path of DatabaseFunctions to the questions.php file, 2. set variable call "totalquestion" a function which is totalquestion function.
 WARNNING IN QUERY: 
