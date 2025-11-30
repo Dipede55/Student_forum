@@ -20,7 +20,8 @@
     <p><?= htmlspecialchars($display_date, ENT_QUOTES, 'UTF-8'); ?></p>
 
     <img height="100" src="/COMP1841/studentforum/images/<?= htmlspecialchars($question['img'], ENT_QUOTES, 'UTF-8'); ?>" alt="Question image">
-
+    <?php 
+    /* 
     <?php
         $isOwner = ($_SESSION['loggedin'] && $_SESSION['user_id'] == $q['user_id']);
         $isAdmin = $_SESSION['is_admin'];
@@ -36,4 +37,6 @@
                 <input type="submit" value="Delete" onclick="return confirm('Delete this question?')">
             </form>
         <?php endif; ?>
+    */
+    ?>
 <?php endforeach; ?>

@@ -2,13 +2,6 @@
      <label for="text">Type your question here:</label>
      <textarea name="text" rows="3" cols="40"></textarea>
 
-     <select name="user">
-          <option value="">select an user</option>
-          <?php foreach($users as $user): ?>
-               <option value="<?=htmlspecialchars($user['id'], ENT_QUOTES, 'UTF-8');?>">
-               <?=htmlspecialchars($user['name'], ENT_QUOTES, 'UTF-8');?></option>
-          <?php endforeach;?>
-          </select>
      <select name="module">
           <option value="">select a module</option>
           <?php foreach($modules as $module): ?>

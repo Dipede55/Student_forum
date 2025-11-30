@@ -15,17 +15,17 @@ if (!isset($basePath)) {
 
     <nav>
         <ul>
-            <li><a href="<?= $basePath ?>/index.php">Home</a></li>
-            <li><a href="<?= $basePath ?>/questions.php">Questions</a></li>
+          <li><a href="<?= $basePath ?>/index.php">Home</a></li>
+          <li><a href="<?= $basePath ?>/questions.php">Questions</a></li>
+          <li><a href="<?= $basePath ?>/addquestion.php">Add Question</a></li>
 
-            <?php if ($_SESSION['loggedin']): ?>
-                <li><a href="<?= $basePath ?>/addquestion.php">Add Question</a></li>
-                <li><a href="<?= $basePath ?>/profile.php">Profile</a></li>
-                <li><a href="<?= $basePath ?>/admin/login/Logout.php">Logout</a></li>
-            <?php else: ?>
-                <li><a href="<?= $basePath ?>/admin/login/Validate.php">Login</a></li>
-                <li><a href="<?= $basePath ?>/admin/login/Signup.php">Signup</a></li>
-            <?php endif; ?>
+          <?php if ($_SESSION['loggedin']): ?>
+          <li><a href="<?= $basePath ?>/admin/login/Logout.php">Logout</a></li>
+          <!-- add profile -->
+          <?php else: ?>
+          <li><a href="<?= $basePath ?>/admin/login/Validate.php">Login</a></li>
+          <li><a href="<?= $basePath ?>/admin/login/Signup.php">Signup</a></li>
+          <?php endif; ?>
         </ul>
     </nav>
 

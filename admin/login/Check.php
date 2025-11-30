@@ -1,5 +1,7 @@
 <?php 
 session_start();
-if($_SESSION['Authorized'] !== "Y"){
-     header("Location: Noauthorized.html");}
+if($_SESSION['loggedin'] !== true){
+     header("Location: ../../index.php");
+     exit;
+}
 ?>

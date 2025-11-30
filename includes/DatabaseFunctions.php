@@ -57,7 +57,7 @@ function allModules ($pdo) {
 
 
 function allQuestions ($pdo) {
-     $questions = query ($pdo, 'SELECT question.id, question.text, question.date, user.name FROM question
+     $questions = query ($pdo, 'SELECT question.id, question.text, question.date, user.name, question.img FROM question
           INNER JOIN module ON module_id = module.id
           INNER JOIN user ON user_id = user.id');
      return $questions->fetchAll();

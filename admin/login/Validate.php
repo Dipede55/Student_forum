@@ -24,7 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['loggedin'] = true;
         $_SESSION['name'] = $user['name'];
         $_SESSION['is_admin'] = (bool)$user['admin_role_id']; // if not null → admin
-        header('Location: ../index.php');
+        $_SESSION['is_school_role'] = (bool)$user['school_role_id']; // if not null → school role
+        if ($_SESSION['is_admin']) {
+            header('Location: ../index.php');
+        } else {
+            header('Location: ../../index.php');
+        }
         exit;
     } else {
         header("Location: Wrongpassword.html");

@@ -1,4 +1,9 @@
 <?php
+require 'includes/session_start.php';
+if (!$_SESSION['loggedin']) {
+    header('Location: admin/login/Validate.php');
+    exit;
+}
 if (isset($_POST['text'])) {
     try {
         include 'includes/DatabaseConnection.php';
@@ -12,6 +17,8 @@ if (isset($_POST['text'])) {
             move_uploaded_file($_FILES['image']['tmp_name'], $targetFile);
         }
 
+        $userId = $_SESSION['user_id'];
+
         // Insert into database
         $sql = 'INSERT INTO question SET 
                     text = :text, 
@@ -21,7 +28,7 @@ if (isset($_POST['text'])) {
                     module_id = :moduleid';
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':text', $_POST['text']);
-        $stmt->bindValue(':userid', $_POST['user']);
+        $stmt->bindValue(':userid', $userId);
         $stmt->bindValue(':moduleid', $_POST['module']);
         $stmt->bindValue(':img', $imageName);
         $stmt->execute();
