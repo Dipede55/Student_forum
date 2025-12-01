@@ -49,4 +49,4 @@
     </ul>
 <?php endif; ?>
 
-<p><a href="questions.php">← Back to Questions</a></p>
+<p><a href="../admin/questions.php">← Back to Questions</a></p>

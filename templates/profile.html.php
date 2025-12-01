@@ -33,6 +33,14 @@
         <input type="password" name="confirm_password" placeholder="Confirm new password">
     </label><br><br>
 
+     <select name="module">
+          <option value="">select a module</option>
+          <?php foreach($modules as $module): ?>
+               <option value="<?=htmlspecialchars($module['id'], ENT_QUOTES, 'UTF-8');?>">
+               <?=htmlspecialchars($module['moduleName'], ENT_QUOTES, 'UTF-8');?></option>
+          <?php endforeach;?>
+     </select>
+
     <input type="submit" value="Update Profile" style="padding:10px 20px; font-size:16px;">
         
     

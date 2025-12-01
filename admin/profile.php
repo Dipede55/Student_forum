@@ -25,6 +25,7 @@ $errors = [];
 if ($_POST) {
     $name = trim($_POST['name'] ?? '');
     $email = trim($_POST['email'] ?? '');
+    $module = $_POST['module'] ?? '';
     $username = trim($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
     $confirm_password = $_POST['confirm_password'] ?? '';
@@ -57,7 +58,7 @@ if ($_POST) {
     }
 
     if (empty($errors)) {
-        $sql = "UPDATE user SET name = :name, email = :email, username = :username $passwordQuery WHERE id = :id";
+        $sql = "UPDATE user SET name = :name, email = :email, username = :username, module_id = :module $passwordQuery WHERE id = :id";
         $pdo->prepare($sql)->execute($params);
 
         // Update session name
@@ -68,6 +69,7 @@ if ($_POST) {
         $user['name'] = $name;
         $user['email'] = $email;
         $user['username'] = $username;
+        $user['module_id'] = $module;
     }
 }
 
@@ -84,5 +86,5 @@ $enrolledModules = $moduleStmt->fetchAll(PDO::FETCH_COLUMN);
 ob_start();
 include '../templates/admin_profile.html.php';
 $output = ob_get_clean();
-include '../templates/layout.html.php';
+include '../templates/admin_layout.html.php';
 ?>

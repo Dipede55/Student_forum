@@ -28,6 +28,6 @@ if (!isset($basePath)) {
      <main>
           <?= $output?>
      </main>
-     <footer>&copy; Student Forum 2025</footer>
+     <footer>&copy; Student Forum 2025 by Diep Thi Ngoc Tran</footer>
 </body>
 </html>

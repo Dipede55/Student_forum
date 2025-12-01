@@ -21,7 +21,6 @@ if (!isset($basePath)) {
           <li><a href="<?= $basePath ?>/profile.php">Profile</a></li>
           <?php if ($_SESSION['loggedin']): ?>
           <li><a href="<?= $basePath ?>/admin/login/Logout.php">Logout</a></li>
-
           <?php else: ?>
           <li><a href="<?= $basePath ?>/admin/login/Validate.php">Login</a></li>
           <li><a href="<?= $basePath ?>/admin/login/Signup.php">Signup</a></li>
@@ -33,6 +32,6 @@ if (!isset($basePath)) {
         <?= $output ?>
     </main>
 
-    <footer>&copy; Student Forum 2025</footer>
+    <footer>&copy; Student Forum 2025 by Diep Thi Ngoc Tran</footer>
 </body>
 </html>
