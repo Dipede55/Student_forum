@@ -21,6 +21,7 @@ if (!isset($basePath)) {
                <li><a href="<?= $basePath ?>/admin/questions.php">Manage Questions</a></li>
                <li><a href="<?= $basePath ?>/admin/modules.php">Manage Modules</a></li> <!-- not coded yet -->
                <li><a href="<?= $basePath ?>/admin/users.php">Manage Users</a></li> <!-- not coded yet -->
+               <li><a href="<?= $basePath ?>/admin/profile.php">Profile</a></li>
                <li><a href="<?= $basePath ?>/admin/login/Logout.php">Public Site/Logout</a></li>
           </ul>
      </nav>

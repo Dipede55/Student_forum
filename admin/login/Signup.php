@@ -21,7 +21,7 @@ if ($_POST) {
         $pdo->prepare("INSERT INTO user (name, email, username, password, school_role_id, admin_role_id)
                        VALUES (?, ?, ?, ?, 1, NULL)")
             ->execute([$name, $email, $username, $md5pass]);
-        header('Location: Login.php?created=1');
+        header('Location: Validate.php');
         exit;
     }
 }
