@@ -7,7 +7,7 @@ if (!isset($basePath)) {
 <html lang="en">
 <head>
      <meta charset="UTF-8">
-     <link rel="stylesheet" href="../admin_questionss.css">
+     <link rel="stylesheet" href="<?= $basePath ?>/css/style.css">
      <title><?= htmlspecialchars($title) ?></title>
 </head>
 <body>

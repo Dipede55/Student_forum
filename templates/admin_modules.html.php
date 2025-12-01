@@ -2,10 +2,10 @@
 <h2>Manage Modules</h2>
 
 <!-- Add New Module Form -->
-<div style="margin: 20px 0; padding: 15px; background: #f0f0f0; border-radius: 8px;">
-    <form method="post" style="display: inline-block;">
+<div style="margin: 20px 0; padding: 15px; background: #f0f0f0; border-radius: 8px; width: auto;">
+    <form method="post" style="display: inline-block; margin: auto;">
         <input type="text" name="moduleName" placeholder="Enter new module name" required 
-               style="padding: 8px; width: 300px; font-size: 1em;">
+               style="padding: 8px; width: 500px; font-size: 1em;">
         <button type="submit" name="add" style="padding: 8px 15px; background: #fe6200; color: white; border: none; cursor: pointer;">
             Add Module
         </button>

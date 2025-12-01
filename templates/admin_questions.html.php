@@ -7,16 +7,16 @@
         <?=htmlspecialchars($question['name'], ENT_QUOTES, 'UTF-8'); ?></a>)
         <br /><?=htmlspecialchars($question['moduleName'], ENT_QUOTES, 'UTF-8'); ?>
         <a href="editquestion.php?id=<?=$question['id']?>">Edit</a>
+        <?php $display_date = date("D d M Y", strtotime($question['date'])); ?>
+        <p><?= htmlspecialchars($display_date, ENT_QUOTES, 'UTF-8'); ?></p>
 
-        <form action="deletequestion.php" method="post">
+        <img height="100" src="../images/<?= htmlspecialchars($question['img'], ENT_QUOTES, 'UTF-8'); ?>" alt="Question image">
+
+        <form action="deletequestion.php" method="post" style="margin-left: 40em; display: inline;">
             <input type="hidden" name="id" value="<?= $question['id'] ?>">
             <input type="submit" value="Delete">
         </form>
-    </blockquote>
+  </blockquote>  
 
-    <?php $display_date = date("D d M Y", strtotime($question['date'])); ?>
-    <p><?= htmlspecialchars($display_date, ENT_QUOTES, 'UTF-8'); ?></p>
-
-     <img height="100" src="../images/<?= htmlspecialchars($question['img'], ENT_QUOTES, 'UTF-8'); ?>" alt="Question image">
-
+    
 <?php endforeach; ?>

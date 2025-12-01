@@ -7,7 +7,7 @@ if (!isset($basePath)) {
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="<?= $basePath ?>/questionss.css">
+    <link rel="stylesheet" href="<?= $basePath ?>/css/style.css">
     <title><?= htmlspecialchars($title) ?></title>
 </head>
 <body>

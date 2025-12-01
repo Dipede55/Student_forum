@@ -1,0 +1,236 @@
+/* ========================================= */
+/*  Modern Student Forum – Modern Orange Theme  */
+/* ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #fff8f0 0%, #fff1e6 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, #fe6200, #ff8c00);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(254, 98, 0, 0.3);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    letter-spacing: 1px;
+}
+
+nav {
+    background: #2c1e3d;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: #fe6200;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(254, 98, 0, 0.4);
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h2 {
+    color: #fe6200;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Cards for Questions */
+blockquote {
+    background: white;
+    border-left: 6px solid #fe6200;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+blockquote:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(254, 98, 0, 0.15);
+}
+
+blockquote p {
+    margin: 0.8rem 0;
+    font-size: 1.1rem;
+}
+
+blockquote small {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+blockquote img {
+    margin-top: 1rem;
+    border-radius: 8px;
+    max-width: 20%;
+    height: auto;
+    border: 3px solid #ffe0cc;
+}
+
+/* Forms – Modern Look */
+form {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 700px;
+    margin: 2rem auto;
+}
+
+label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-weight: 600;
+    color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #fe6200;
+    box-shadow: 0 0 0 3px rgba(254, 98, 0, 0.2);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input[type="file"] {
+    padding: 0.5rem 0;
+}
+
+/* Buttons */
+input[type="submit"],
+button,
+a.btn {
+    background: #fe6200;
+    color: white;
+    border: none;
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+input[type="submit"]:hover,
+button:hover,
+a.btn:hover {
+    background: #e55a00;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(254, 98, 0, 0.4);
+}
+
+/* Delete button – red */
+form input[type="submit"][value="Delete"],
+button.delete {
+    background: #d32f2f;
+}
+
+form input[type="submit"][value="Delete"]:hover {
+    background: #b71c1c;
+}
+
+/* Admin-specific */
+#admin header {
+    background: linear-gradient(135deg, #6a1b9a, #8e24aa);
+}
+
+#admin nav {
+    background: #4a148c;
+}
+
+#admin nav a:hover {
+    background: #fe6200;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #2c1e3d;
+    color: #ccc;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav a {
+        width: 80%;
+        text-align: center;
+    }
+    form {
+        padding: 1.5rem;
+    }
+}

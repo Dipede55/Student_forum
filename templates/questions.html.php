@@ -12,17 +12,20 @@
        
         <a href="editquestion.php?id=<?=$question['id']?>">Edit</a>
         </small>
-        <form action="deletequestion.php" method="post">
-            <input type="hidden" name="id" value="<?= $question['id'] ?>">
-            <input type="submit" value="Delete">
-        </form>
-    </blockquote>
+        
+   
 
     <?php $display_date = date("D d M Y", strtotime($question['date'])); ?>
     <p><?= htmlspecialchars($display_date, ENT_QUOTES, 'UTF-8'); ?></p>
 
     <img height="100" src="/COMP1841/studentforum/images/<?= htmlspecialchars($question['img'], ENT_QUOTES, 'UTF-8'); ?>" alt="Question image">
-    <?php 
+
+    <form action="deletequestion.php" method="post" style="margin-left: 40em; display: inline;">
+            <input type="hidden" name="id" value="<?= $question['id'] ?>">
+            <input type="submit" value="Delete">
+    </form>
+    </blockquote> 
+     <?php 
     /* 
     <?php
         $isOwner = ($_SESSION['loggedin'] && $_SESSION['user_id'] == $q['user_id']);
