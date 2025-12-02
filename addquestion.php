@@ -4,6 +4,7 @@ if (!$_SESSION['loggedin']) {
     header('Location: admin/login/Validate.php');
     exit;
 }
+
 if (isset($_POST['text'])) {
     try {
         include 'includes/DatabaseConnection.php';

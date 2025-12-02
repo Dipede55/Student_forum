@@ -115,30 +115,7 @@ function allQuestions($pdo) {
         JOIN user u ON q.user_id = u.id
         JOIN module m ON q.module_id = m.id
         ORDER BY q.date DESC');
-
-    $result = [];
-
-    foreach ($questions->fetchAll() as $q) {
-
-        // Fetch replies for this question
-        $replies = query($pdo, '
-            SELECT 
-                r.id, 
-                r.reply_text, 
-                r.created_at, 
-                r.user_id,
-                u.name AS reply_name
-            FROM replies r
-            JOIN user u ON r.user_id = u.id
-            WHERE r.question_id = ?
-            ORDER BY r.created_at ASC
-        ', [$q['id']]); // FIXED: correct parameter binding
-
-        $q['replies'] = $replies->fetchAll();
-        $result[] = $q;
-    }
-
-    return $result;
+    return $questions->fetchAll();
 }
 
 function currentUser() {

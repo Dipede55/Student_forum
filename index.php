@@ -1,4 +1,9 @@
 <?php
+require 'includes/session_start.php';
+if (!$_SESSION['loggedin']) {
+    header('Location: admin/login/Validate.php');
+    exit;
+}
 $title = 'Student Forum Database';
 ob_start(); //ob output buffering to store the variables and use later by UI file
 //create as a empty buffer and add the item inside

@@ -1,4 +1,9 @@
 <?php 
+require 'includes/session_start.php';
+if (!$_SESSION['loggedin']) {
+    header('Location: admin/login/Validate.php');
+    exit;
+}
      try{
           include 'includes/DatabaseConnection.php';
           include 'includes/DatabaseFunctions.php';
