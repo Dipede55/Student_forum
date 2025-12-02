@@ -9,7 +9,7 @@ $totalModules = totalModules($pdo);
 
 try {
     if (isset($_POST['delete'])) {
-        delete_module($pdo, $_POST['id']);
+        deleteModule($pdo, $_POST['id']);
     }
 
     if (isset($_POST['add'])) {

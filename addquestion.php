@@ -30,7 +30,7 @@ if (isset($_POST['text'])) {
         $stmt->bindValue(':text', $_POST['text']);
         $stmt->bindValue(':userid', $userId);
         $stmt->bindValue(':moduleid', $_POST['module']);
-        $stmt->bindValue(':img', $imageName);
+        $stmt->bindValue(':img', value: $imageName);
         $stmt->execute();
 
         header('location: questions.php');
